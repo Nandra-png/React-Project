@@ -50,6 +50,7 @@ function DataSiswa() {
     const dataSiswa = [
         {
             foto: "rendra.jpg",
+            
             nama: "Rendra",
             kelas: "10 PPLG 1",
             alamat: "Depok"
@@ -71,9 +72,9 @@ function DataSiswa() {
         <div>
             <Judul />
             <div className="card-container">
-                <GroupCard {...dataSiswa[0]} />
-                <GroupCard {...dataSiswa[1]} />
-                <GroupCard {...dataSiswa[2]} />
+                {dataSiswa.map((siswa) => (
+                    <GroupCard {...siswa} key={siswa.nama} />
+                ))}
             </div>
         </div>
     )
